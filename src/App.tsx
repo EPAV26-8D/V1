@@ -1,17 +1,7 @@
-import { useEffect, useMemo, useState, type MouseEvent, type ReactNode } from 'react'
-import ContatoPage from './pages/ContatoPage'
-import HomePage from './pages/HomePage'
+import { useEffect, useMemo, useState, type MouseEvent } from 'react'
 import NotFoundPage from './pages/NotFoundPage'
-import SobrePage from './pages/SobrePage'
+import { routes, type RoutePath } from './pages/routes'
 import './App.css'
-
-type RoutePath = '/' | '/sobre' | '/contato'
-
-const routeEntries: Record<RoutePath, ReactNode> = {
-  '/': <HomePage />,
-  '/sobre': <SobrePage />,
-  '/contato': <ContatoPage />,
-}
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname)
@@ -43,21 +33,24 @@ export default function App() {
   }
 
   const pageContent = useMemo(() => {
-    return routeEntries[currentPath as RoutePath] ?? <NotFoundPage />
+    const currentRoute = routes.find((route) => route.path === currentPath)
+    return currentRoute?.element ?? <NotFoundPage />
   }, [currentPath])
 
   return (
     <>
       <nav className="navbar">
-        <a href="/" onClick={(event) => handleLinkClick(event, '/')}>
-          <i className="bi bi-house"></i> Home
-        </a>
-        <a href="/sobre" onClick={(event) => handleLinkClick(event, '/sobre')}>
-          Sobre
-        </a>
-        <a href="/contato" onClick={(event) => handleLinkClick(event, '/contato')}>
-          Contato
-        </a>
+        {routes
+          .filter((route) => route.showInNav)
+          .map((route) => (
+            <a
+              key={route.path}
+              href={route.path}
+              onClick={(event) => handleLinkClick(event, route.path)}
+            >
+              {route.icon && <i className={`bi bi-${route.icon}`}></i>} {route.label}
+            </a>
+          ))}
       </nav>
 
       <main>{pageContent}</main>
