@@ -71,14 +71,28 @@ h5 { font-size: 1.44rem; }
 h6 { font-size: 1.2rem; }
 p  { font-size: 1rem; }
 
-main, main section {
+main, main > section {
     display: flex;
     flex-direction: column;
     gap: var(--main-gap);
 }
 
-main {
+main > section {
     padding: var(--main-padding);
+}
+
+main section:nth-of-type(even) {
+    background-color: var(--accent-primary);
+}
+
+main section:nth-of-type(even) > *,
+main section:nth-of-type(even) > div > * {
+    color: var(--text-inverse);
+}
+
+main section:nth-of-type(even) > :is(h1, h2, h3, h4, h5, h6),
+main section:nth-of-type(even) > div > :is(h1, h2, h3, h4, h5, h6) {
+    color: var(--title-inverse);
 }
 
 img {

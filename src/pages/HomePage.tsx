@@ -10,7 +10,7 @@ export default function App() {
             <section className="upload">
                 <div>
                     <h1>Seja bem-vindo(a)!</h1>
-                    <p>Para começar, por favor, carregue o formulário Excel desta semana no campo abaixo.</p>
+                    <p>Para começar, por favor, carregue o formulário Excel desta semana no campo abaixo. Os itens serão mostrados logo após o upload.</p>
                 </div>
                 
                 <FileDrop
@@ -25,7 +25,16 @@ export default function App() {
             </section>
 
             <section className="suggestions">
-                
+                <div>
+                    <h1>Sugestões</h1>
+                    <p>Confira algumas sugestões versáteis!</p>
+                </div>
+
+                <div>
+                    
+                </div>
+
+                <p><strong>Importante: </strong>como o arquivo ainda não foi carregado, alguns produtos podem estar indisponíveis.</p>
             </section>
         </>
     );
