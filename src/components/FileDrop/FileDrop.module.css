@@ -1,0 +1,39 @@
+.input {
+    display: none;
+}
+  
+.dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    place-items: center;
+    min-height: 10rem;
+    padding: 1.25rem;
+    background: var(--accent-surface);
+    border: 2px dashed var(--accent-border);
+    border-radius: 1rem;
+    color: var(--text-primary);
+    text-align: center;
+    cursor: pointer;
+    transition:
+        background-color 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease,
+        box-shadow 160ms ease;
+}
+
+.dropzone:focus-visible {
+    outline: 2px solid var(--accent-border);
+    outline-offset: 2px;
+}
+
+.dragging, .dropzone:hover {
+    transform: scale(1.025);
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

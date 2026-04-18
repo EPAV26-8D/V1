@@ -3,6 +3,7 @@ import ContatoPage from './pages/ContatoPage'
 import HomePage from './pages/HomePage'
 import NotFoundPage from './pages/NotFoundPage'
 import SobrePage from './pages/SobrePage'
+import './App.css'
 
 type RoutePath = '/' | '/sobre' | '/contato'
 
@@ -47,7 +48,7 @@ export default function App() {
 
   return (
     <>
-      <nav>
+      <nav className="navbar">
         <a href="/" onClick={(event) => handleLinkClick(event, '/')}>
           Home
         </a>{' '}

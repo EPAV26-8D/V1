@@ -1,0 +1,99 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: #de4826;
+    --light-orange: color-mix(in srgb, var(--orange), white 30%);
+
+    --gray1: #eee;
+    --gray2: color-mix(in srgb, var(--gray1), black 7.5%);
+    --gray3: color-mix(in srgb, var(--gray1), black 15%);
+    --gray4: color-mix(in srgb, var(--gray1), black 22.5%);
+    --gray5: color-mix(in srgb, var(--gray1), black 30%);
+    --gray6: color-mix(in srgb, var(--gray1), black 37.5%);
+
+    --tgray1: color-mix(in srgb, var(--gray1), transparent 40%);
+    --tgray2: color-mix(in srgb, var(--gray2), transparent 40%);
+    --tgray3: color-mix(in srgb, var(--gray3), transparent 40%);
+    --tgray4: color-mix(in srgb, var(--gray4), transparent 40%);
+    --tgray5: color-mix(in srgb, var(--gray5), transparent 40%);
+    --tgray6: color-mix(in srgb, var(--gray6), transparent 40%);
+
+    --surface-background: var(--gray1);
+    --surface-primary: var(--tgray2);
+    --surface-secondary: var(--tgray3);
+    --surface-card: var(--gray2);
+
+    --border-primary: var(--tgray3);
+    --border-secondary: var(--tgray4);
+    --border-card: var(--gray3);
+
+    --accent-primary: var(--orange);
+    --accent-secondary: var(--light-orange);
+    --accent-surface: color-mix(in srgb, var(--orange) 15%, transparent);
+    --accent-border: color-mix(in srgb, var(--orange) 40%, transparent);
+    --accent-text: var(--orange);
+
+    --text-primary: #383838;
+    --text-secondary: #585858;
+    --text-inverse: #ffffff;
+
+    --title-primary: #de4826;
+    --title-secondary: #383838;
+    --title-inverse: #ffffff;
+
+    --navbar-height: 3rem;
+    --main-padding: 3rem;
+    --main-gap: 1rem;
+}
+
+body {
+    background-color: var(--surface-background);
+    font-family: 'DM Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 { 
+    color: var(--title-primary);
+    font-family: 'DM Serif Text', 'Times New Roman', Times, serif; 
+    line-height: 1.05;
+}
+
+h1 { font-size: 2.986rem; }
+h2 { font-size: 2.488rem; }
+h3 { font-size: 2.074rem; }
+h4 { font-size: 1.728rem; }
+h5 { font-size: 1.44rem; }
+h6 { font-size: 1.2rem; }
+p  { font-size: 1rem; }
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--main-gap);
+    padding: var(--main-padding);
+    padding-top: calc(var(--navbar-height) + var(--main-padding));
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    height: var(--navbar-height);
+    background-color: var(--surface-primary);
+    border-bottom: 1px solid var(--border-primary);
+    backdrop-filter: blur(0.8rem);
+}
+
+img {
+    width: 275dvw;
+}
