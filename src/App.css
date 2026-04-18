@@ -47,7 +47,6 @@
     --title-secondary: #383838;
     --title-inverse: #ffffff;
 
-    --navbar-height: 3rem;
     --main-padding: 3rem;
     --main-gap: 1rem;
 }
@@ -58,9 +57,9 @@ body {
     color: var(--text-primary);
 }
 
-h1, h2, h3, h4, h5, h6 { 
+h1, h2, h3, h4, h5, h6 {
     color: var(--title-primary);
-    font-family: 'DM Serif Text', 'Times New Roman', Times, serif; 
+    font-family: 'DM Serif Text', 'Times New Roman', Times, serif;
     line-height: 1.05;
 }
 
@@ -80,32 +79,6 @@ main, main section {
 
 main {
     padding: var(--main-padding);
-    padding-top: calc(var(--navbar-height) + var(--main-padding));
-}
-
-.navbar {
-    position: fixed;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-    height: var(--navbar-height);
-    background-color: var(--surface-primary);
-    border-bottom: 1px solid var(--border-primary);
-    backdrop-filter: blur(0.8rem);
-}
-
-.navbar a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.4s, font-weight 0.4s;
-}
-
-.navbar a:hover, 
-.navbar a:active {
-    color: var(--accent-text);
 }
 
 img {
