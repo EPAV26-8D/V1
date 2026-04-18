@@ -50,13 +50,11 @@ export default function App() {
     <>
       <nav className="navbar">
         <a href="/" onClick={(event) => handleLinkClick(event, '/')}>
-          Home
-        </a>{' '}
-        |{' '}
+          <i className="bi bi-house"></i> Home
+        </a>
         <a href="/sobre" onClick={(event) => handleLinkClick(event, '/sobre')}>
           Sobre
-        </a>{' '}
-        |{' '}
+        </a>
         <a href="/contato" onClick={(event) => handleLinkClick(event, '/contato')}>
           Contato
         </a>

@@ -72,10 +72,13 @@ h5 { font-size: 1.44rem; }
 h6 { font-size: 1.2rem; }
 p  { font-size: 1rem; }
 
-main {
+main, main section {
     display: flex;
     flex-direction: column;
     gap: var(--main-gap);
+}
+
+main {
     padding: var(--main-padding);
     padding-top: calc(var(--navbar-height) + var(--main-padding));
 }
@@ -92,6 +95,18 @@ main {
     background-color: var(--surface-primary);
     border-bottom: 1px solid var(--border-primary);
     backdrop-filter: blur(0.8rem);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.4s, font-weight 0.4s;
+}
+
+.navbar a:hover, 
+.navbar a:active {
+    font-weight: 600;
+    color: var(--accent-text);
 }
 
 img {

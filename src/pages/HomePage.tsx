@@ -7,20 +7,26 @@ export default function App() {
 
     return (
         <>
-            <div>
-                <h1>Seja bem-vindo(a)!</h1>
-                <p>Para começar, por favor, carregue o formulário Excel desta semana no campo abaixo.</p>
-            </div>
-            
-            <FileDrop
-                accept=".pdf,.xlsx,.xls,.csv,image/*"
-                multiple
-                onFilesSelect={handleFiles}
-                title="Clique aqui para selecionar"
-                subtitle="Lembre-se de selecionar o desta semana"
-            />
+            <section className="upload">
+                <div>
+                    <h1>Seja bem-vindo(a)!</h1>
+                    <p>Para começar, por favor, carregue o formulário Excel desta semana no campo abaixo.</p>
+                </div>
+                
+                <FileDrop
+                    accept=".pdf,.xlsx,.xls,.csv,image/*"
+                    multiple
+                    onFilesSelect={handleFiles}
+                    title="Clique aqui para selecionar"
+                    subtitle="Lembre-se de selecionar o desta semana"
+                />
 
-            <p><strong>Importante: </strong>o site ainda está em desenvolvimento e erros podem acontecer. Por isso, verifique o formulário.</p>
+                <p><strong>Importante: </strong>o site ainda está em desenvolvimento e erros podem acontecer. Por isso, verifique o formulário.</p>
+            </section>
+
+            <section className="suggestions">
+                
+            </section>
         </>
     );
 }
